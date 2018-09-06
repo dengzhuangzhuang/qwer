@@ -1,0 +1,318 @@
+
+@import url(http://fonts.font.im/css?family=Dancing+Script);
+
+*{
+    padding: 0;/*去除所有元素的内边距*/
+    margin: 0;/*去掉所有元素的外边距*/
+    box-sizing: border-box;
+    /** 代表所有标签，box-sizing属性设置为border-box
+    如果给盒子设置内边距和边框的话，会从自身content中减去，
+    不会改变盒子的大小*/
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration:none;
+}
+.clearfix {
+    overflow: hidden;
+    zoom: 1;
+}
+/*.clearfix:after{*/
+    /*content: "";*/
+    /*display: block;*/
+    /*clear: both;*/
+/*}*/
+/*设置容器的宽度以及容器的定位属性*/
+.container {
+    max-width: 1200px;
+    margin:0 auto ;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+img{
+    display: inline-block;
+    max-width: 100%;
+}
+h1,h2,h3,h4,h5,h6{
+margin: 0;
+}
+section{
+    padding: 50px 0;
+    min-height: 400px;
+    line-height: 2;
+}
+/****************************header开始************************************/
+
+header{
+    width: 100%;
+    padding-bottom: 20px;
+    position:fixed ;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    background: rgba(0,0,0,0);
+    transition: all .5s;
+}
+ .on{
+    padding: 3px 0;
+    background: rgba(0,0,0,.7);
+}
+header .logo  {
+     float: left;
+}
+header .logo span{
+    font-size: 48px;
+    color: white;
+    vertical-align: middle;
+    font-family:"Dancing Script";
+
+}
+header .logo img{
+    vertical-align: middle;
+}
+
+header .navbar
+{
+ float: right;
+}
+
+header .navbar ul li{
+      float: left;
+    margin: 20px;
+      }
+header .navbar ul li a{
+        color: #ffffff;
+    text-shadow:1px 1px 3px rgba(0,0,0,.7) ;
+    transition: color .5s;
+
+}
+header .navbar ul  li a:hover{
+    color: #339beb;
+}
+header .navbar ul li a.active {
+    color: #339beb;
+}
+
+/*****************banner****************/
+.banner{
+    background: url("../image/banner.jpg") no-repeat center  center;
+
+    background-size: cover;
+
+}
+section .br {
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+
+}
+section .br h1 span{
+    color: #339beb;
+}
+section .br p{
+    line-height: 1.8;
+    text-align: left;
+
+}
+section .br p span
+{
+    color: #000;
+    background: rgba(255,255,255,.5);
+    padding: 2px 5px;
+}
+/**************************关于我们******************************/
+.about h1{
+    margin: 0;
+    text-align: center;
+}
+.about h1+p{
+    margin-top: 0;
+    margin-bottom: 60px;
+    text-align: center;
+}
+.about .img{
+    width: 49%;
+    float: left;
+
+}
+.about .note{
+    width: 49%;
+    float: right;
+}
+.about .note ul{
+    counter-reset: ww 0;
+}
+.about .note ul li{
+    counter-increment:ww 1;
+    position: relative;
+    padding-left: 32px;
+    cursor: pointer;
+}
+.about .note ul li::before {
+    content: counter(ww);
+    width: 20px;
+    height: 20px;
+    border: 1px dashed #000000;
+    border-radius: 50%;
+    line-height: 1.2;
+    text-align: center;
+    position: absolute;
+    left:0;
+    top:5px;
+    transform: translate(0px);
+    transition:transfrom .5s;
+}
+.about .note ul li:hover:before{
+   transform: translate(-5px);
+}
+.service{
+    min-height: 600px;
+    background: url(../image/desktop.jpg) center center no-repeat;
+    background-size: cover;
+    color: #000000;
+
+    text-align: center;
+}
+.service li {
+    float: left;
+    width: 48%;
+    margin-right: 4%;
+    text-align: right;
+
+}
+.service li:nth-child(2n){
+    margin-right:0;
+    text-align: left;
+
+
+}
+.service li h3{
+    display: inline-block;
+}
+.service li:nth-child(2n+1) i{
+    float: right;
+    padding: 12px 0px 0px 20px;
+
+
+}
+.service li:nth-child(2n) i{
+    float: left;
+    padding: 12px 20px 0px 0px;
+}
+.service li i{
+    display: inline-block;
+
+}
+.service li i:hover {
+    transform: scale(2) ;
+    transition: .5s;
+    color: blue;
+    cursor: pointer;
+
+}
+.service li:nth-child(2n):hover{
+    transform: translate(-8px);
+}
+.service li:nth-child(2n+1):hover{
+    transform: translate(8px);
+}
+.product{
+    min-height: 1500px;
+
+}
+.content{
+
+    line-height: 0;
+}
+figure {
+    width: 23.6%;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    margin: 10px calc(4% / 3) 10px 0px;
+}
+
+.content figure img{
+    float: left;
+    margin: 0;
+}
+
+figure:nth-child(4n){
+    margin-right: 0;
+}
+.content figure img{
+    width: 100%;
+    height: auto;
+    transform: scale(1) rotate(0deg);
+    transition: transform .5s;
+    vertical-align: top;
+}
+.content figure:hover img{
+    transform: scale(1.2) rotate(3deg);
+}
+
+ .container .content figure figcaption{
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 50%;
+    bottom: 5%;
+    background-color: rgba(255,255,255,.8);
+    padding: 10px;
+}
+
+figure figcaption .time{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color:#339BEB;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+
+.contact{
+    background: url(../image/android-1869510_1920.jpg) no-repeat center top;
+    background-size: cover;
+    color: #fff;
+}
+.contact .left{
+    width: 48%;
+    text-align: left;
+    float: left;
+    margin-right: 4%;
+}
+.contact .left p{
+    margin-top: 0px;
+}
+.contact li i{
+    line-height: 30px;
+    padding: 0px 10px 0px 0px;
+}
+.contact .right{
+    float: right;
+    width: 48%;
+    margin-right: 0%;
+}
+.contact .right input,
+.contact .right textarea{
+    width: 100%;
+    padding: 10px 16px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.6);
+}
+::-webkit-input-placeholder{
+    color: #000;
+}
+::-moz-placeholder{
+    color: #000;
+}
